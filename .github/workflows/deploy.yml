@@ -1,9 +1,13 @@
 name: GitHub Actions Demo
 
-on: [push]
-
+on:
+  push:
 jobs:
-  echo_hello_world:
+  checkout_test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello world!!"
+      - uses: actions/checkout@v4
+      - run: |
+          ls -a
+          echo ""
+          git branch -a
